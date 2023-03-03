@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const userSchema = require('./Reaction');
+const reactionSchema = require('./Reaction');
 
 // Schema to create Student model
 const userSchema = new Schema(
@@ -16,13 +16,13 @@ const userSchema = new Schema(
       unique:true,
       match: [/.+@.+\..+/, 'Must be an email!'],
     },
-    thought: [{
+    thoughts: [{
       type: Schema.Types.ObjectId,
-      reference: "thoughts"
+      reference: "Thought"
   }],
-  friend: [{
+  friends: [{
     type: Schema.Types.ObjectId,
-    reference: "friends"
+    reference: "User"
 }],
   },
   {
